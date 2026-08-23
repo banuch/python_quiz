@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Python Programming Quiz</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="app">
+  <header class="top">
+    <h1>🐍 Python Programming Quiz</h1>
+    <p>230 questions across 14 topics — from basics to Flask, NumPy, and deployment.</p>
+  </header>
+
+  <!-- Setup screen -->
+  <section id="setup" class="card">
+    <h2>Choose your topics</h2>
+    <div class="setup-actions">
+      <button id="selectAll" class="ghost">Select all</button>
+      <button id="selectNone" class="ghost">Select none</button>
+    </div>
+    <div id="sectionList" class="section-list"></div>
+
+    <div class="setup-row">
+      <label><input type="checkbox" id="shuffleQuestions" checked /> Shuffle questions</label>
+      <label><input type="checkbox" id="shuffleOptions" checked /> Shuffle answer choices</label>
+      <label>
+        Number of questions:
+        <select id="questionLimit">
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="50">50</option>
+          <option value="all" selected>All selected</option>
+        </select>
+      </label>
+    </div>
+
+    <button id="startBtn" class="primary">Start Quiz</button>
+  </section>
+
+  <!-- Quiz screen -->
+  <section id="quiz" class="card hidden">
+    <div class="progress-wrap">
+      <span id="progressLabel"></span>
+      <span id="scoreLabel"></span>
+    </div>
+    <div class="progress-bar"><div id="progressFill"></div></div>
+
+    <span id="sectionTag" class="q-section-tag"></span>
+    <p id="questionText" class="q-text"></p>
+
+    <div id="optionsList" class="options"></div>
+
+    <div id="feedback" class="feedback hidden"></div>
+
+    <div class="nav-row">
+      <div>
+        <button id="prevBtn">Previous</button>
+        <button id="quitBtn" class="ghost">Quit</button>
+      </div>
+      <button id="nextBtn" class="primary" disabled>Next</button>
+    </div>
+  </section>
+
+  <!-- Results screen -->
+  <section id="results" class="card hidden">
+    <div class="score-hero">
+      <div class="big"><span id="scoreBig"></span> <span class="pct">(<span id="scorePct"></span>)</span></div>
+      <p id="scoreVerdict"></p>
+    </div>
+
+    <h3>Breakdown by section</h3>
+    <div id="sectionBreakdown" class="section-breakdown"></div>
+
+    <div class="setup-actions">
+      <button id="retryBtn" class="primary">Retry same quiz</button>
+      <button id="newQuizBtn" class="ghost">New quiz setup</button>
+    </div>
+
+    <h3>Review</h3>
+    <div id="reviewList"></div>
+  </section>
+
+  <footer class="credits">Built from Python_Quiz_Answer_Key_1.pdf</footer>
+</div>
+
+<script src="questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
